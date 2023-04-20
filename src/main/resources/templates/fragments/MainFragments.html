@@ -80,7 +80,7 @@
       <div class="nav-item dropdown ms-4 p_pic">
         <a href="#" class="d-flex align-items-center dropdown-toggle text-decoration-none"
            data-bs-toggle="dropdown">
-          <em class="me-2 avtar avtar-30 border-0"><img th:src="@{/assets/img/{photo}(photo=${profile} ) }" alt="" width="30" /></em>
+          <em class="me-2 avtar avtar-30 border-0"><img th:src="@{'/assets/img/'+${profile}}" alt="" width="30" /></em>
           <span class="me-2"  th:text="${username}"> </span>
         </a>
         <div class="dropdown-menu dropdown-menu-end border-0 m-0 w-100">
