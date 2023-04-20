@@ -1,0 +1,94 @@
+<div th:fragment="css-links" xmlns:th="http://www.w3.org/1999/xhtml">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" th:href="@{/assets/img/favicons/apple-touch-icon.png}" />
+  <link rel="icon" type="image/png" sizes="32x32" th:href="@{/assets/img/favicons/favicon-32x32.png}"/>
+  <link rel="icon" type="image/png" sizes="16x16" th:href="@{/assets/img/favicons/favicon-16x16.png}"/>
+  <link rel="shortcut icon" type="image/x-icon" th:href="@{/assets/img/favicons/favicon.ico}"/>
+  <link rel="mask-icon" th:href="@{/assets/img/favicons/safari-pinned-tab.svg}" color="#5bbad5"/>
+  <link rel="manifest" th:href="@{/assets/img/favicons/manifest.json}"/>
+  <meta name="msapplication-TileImage" content="/assets/img/favicons/mstile-150x150.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Customized Bootstrap Stylesheet -->
+  <link th:href="@{/lib/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+
+  <!-- Template Stylesheet -->
+  <link th:href="@{/assets/css/style.css}" rel="stylesheet"/>
+</div>
+
+<div th:fragment="aside" xmlns:th="http://www.w3.org/1999/xhtml">
+  <aside class="sidebar pb-3">
+    <button class="d-lg-none close_btn"><img th:src="@{/assets/img/icons/close_icon.svg}" alt="Close" width="30" /></button>
+    <nav class="navbar text-left">
+      <a href="/dashboard" class="navbar-brand my-4 pt-2 pb-4 m-auto text-center">
+        <img th:src="@{/assets/img/logo.svg}" alt="Sbrigit" width="144" class="img-fluid" />
+      </a>
+
+      <ul class="navbar-nav w-100">
+        <li><a href="/dashboard" id="1" class="nav-link active"><i class="me-2"><img
+                th:src="@{/assets/img/icons/menu_icons/dashboard_icon.svg}" width="24" alt="" /></i> Dashboard </a></li>
+
+        <li><a href="/admin/users?offset=0&pageSize=5&query" id="2" class="nav-link"><i class="me-2"><img
+                th:src="@{/assets/img/icons/menu_icons/driver_icon.svg}" width="23" alt="" /></i>
+          User Operations</a></li>
+      </ul>
+      <div class="logout_menu"><a href="/logout-user" id="5" class="nav-link"><i class="me-2"><img
+              th:src="@{/assets/img/icons/menu_icons/logout_icon.svg}" width="24" alt="Logout" /></i> Log Out </a>
+      </div>
+    </nav>
+
+  </aside>
+</div>
+
+<div th:fragment="html_head" xmlns:th="http://www.w3.org/1999/xhtml">
+  <meta charset="utf-8">
+  <title></title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
+  <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicons/favicon.ico">
+  <link rel="manifest" href="assets/img/favicons/manifest.json">
+  <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Template Stylesheet -->
+  <link href="assets/css/style.css" rel="stylesheet">
+</div>
+
+
+<div th:fragment="navbar" xmlns:th="http://www.w3.org/1999/xhtml">
+  <nav class="navbar navbar-expand navbar-dark px-3 px-lg-4 py-3 top_header">
+
+    <a href="#" class="sidebar-toggler flex-shrink-0 me-2 d-lg-none">
+      <img th:src="@{/assets/img/icons/hamburger_icon.svg}" alt="" width="30" />
+    </a>
+
+    <div class="d-none d-md-block title_hd">
+      <span class="h6 mb-0 text-capitalize" th:text="${welcome}"></span>
+      <small class="d-block f-small text-mute" th:text="${timeNow}" ></small>
+    </div>
+
+    <div class="navbar-nav align-items-center ms-auto">
+
+      <div class="nav-item dropdown ms-4 p_pic">
+        <a href="#" class="d-flex align-items-center dropdown-toggle text-decoration-none"
+           data-bs-toggle="dropdown">
+          <em class="me-2 avtar avtar-30 border-0"><img th:src="@{/assets/img/{photo}(photo=${profile} ) }" alt="" width="30" /></em>
+          <span class="me-2"  th:text="${username}"> </span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-end border-0 m-0 w-100">
+          <a href="/edit-profile" class="dropdown-item">My Profile</a>
+          <a href="/logout-user" class="dropdown-item">Logout</a>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+</div>

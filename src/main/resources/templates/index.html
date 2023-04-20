@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sbrigit - Login</title>
+    <meta content="" name="author">
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div th:replace="/fragments/MainFragments.html :: css-links"></div>
+</head>
+
+<body>
+    <!--  Start Login Page -->
+    <div class="overflow-hidden front_form">
+        <div class="row g-0">
+            <div class="d-none d-md-flex col-md-6 login_bg">
+                <div class="front_logo">
+                    <img src="assets/img/logo.svg" alt="Sbrigit" width="249"/>
+                </div>
+            </div>
+            <div class="col-md-6"> 
+                <div class="d-flex flex-column align-items-start justify-content-center px-3 px-md-5 min-vh-100">
+                    <div class="ls_form">
+                        <div class="d-md-none front_logo">
+                            <img src="assets/img/logo.svg" alt="Sbrigit" width="249"/>
+                        </div>
+                        <form class="w-100" id="frm" name="frm" method="post" action="login" >
+                            <div class="title_group text-left mb-4 pb-3"> 
+                                <h1 class="h1 mb-3">Login</h1>
+                                <p>Welcome back! Please enter your details.</p>
+                            </div>
+
+<!--                            <input type="hidden" id="uuid" name="uuid" th:value="${token}"  />-->
+
+                            <div class="mb-4">
+                                <div class="position-relative">
+                                    <input type="text" id="email" class="form-control" name="email" placeholder="Enter Username" required />
+                                </div>
+                            </div>
+
+                            <div class="mb-4"> 
+                                <div class="position-relative">
+                                    <input type="password" id="password" name="password" class="form-control" placeholder="Password" required />
+                                    <button type="button" class="show_hide_pwd" onclick="show()"><img src="assets/img/icons/hide_password.svg" id="EYE" width="16" /></button>
+                                </div>
+                            </div>
+
+                            <div class="mb-4 text-end">
+                                <a href="forgot-password">Forgot Password?</a>
+                            </div>
+
+                            <div class="pt-3">
+                                <button class="py-md-3 w-100 btn btn-lg btn-primary" type="submit">
+                                    Login 
+                                </button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+    <!--  End Login Page -->
+
+    <!-- Script -->
+    <script>
+        function show() {
+            var a = document.getElementById("pwd");
+            var b = document.getElementById("EYE");
+            if (a.type == "password") {
+                a.type = "text";
+                b.src = "assets/img/icons/show_password.svg";
+            } else {
+                a.type = "password";
+                b.src = "assets/img/icons/hide_password.svg";
+            }
+        }
+
+<!--        function sendHeader(){-->
+<!--            var uuid = document.getElementById('uuid').value;-->
+<!--            var formData= mew FormData(document.getElementById('frm'));-->
+<!--            var xhr= new XMLHttpRequest();-->
+<!--            xhr.open('POST','http://localhost:8080/login', true);-->
+<!--            xhr.setRequestHeader('Authorization','Bearer '+ uuid);-->
+<!--            xhr.send(formData);-->
+<!--        }-->
+    </script>
+    
+</body>
+
+</html>
