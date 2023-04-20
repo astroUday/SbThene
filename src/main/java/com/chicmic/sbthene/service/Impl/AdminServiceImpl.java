@@ -121,6 +121,7 @@ public class AdminServiceImpl implements UserDetailsService, AdminService {
         if(cookies!=null){
             for(Cookie cookie:cookies){
                 if("AuthHeader".equals(cookie.getName())){
+                    tokenJpaRepo.deleteByUuid(cookie.getValue());
                     cookie.setValue(null);
                     cookie.setMaxAge(0);
                     cookie.setPath("/");
